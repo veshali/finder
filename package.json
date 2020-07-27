@@ -1,0 +1,25 @@
+{
+  "name": "finder-api",
+  "version": "1.0.0",
+  "description": "pg finder",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "12.18.2"
+  },
+  "author": "paras",
+  "license": "ISC",
+  "dependencies": {
+    "all": "0.0.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.19",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.25",
+    "validator": "^13.1.1"
+  }
+}
