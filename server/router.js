@@ -7,6 +7,7 @@ var{User}= require('./models/user');
 var{authenticate}= require('./middleware/authenticate');
 var userController=require('./controllers/user-controller');
 var restaurentcontroller=require('./controllers/restaurent-controller');
+var itemcontroller=require('./controllers/item-controllers');
 
 const router=express.Router();
 
@@ -29,5 +30,9 @@ router.get('/users/me',authenticate,userController.loginWithToken);
 router.post('/addrestaurent',restaurentcontroller.addrestaurent);
 
 router.get('/home',restaurentcontroller.home);
+
+router.post('/additem',itemcontroller.additem);
+
+router.get('/homeItem',itemcontroller.homeItem);
 
 module.exports=router;
