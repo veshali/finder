@@ -4,6 +4,10 @@ const _ = require('lodash');
 
 var ItemSchema=new mongoose.Schema({
 
+restaurentId:{
+  type:mongoose.Schema.Types.ObjectId,
+  ref:'restaurents'
+},
 name:{
   type:String,
   minlength:1,

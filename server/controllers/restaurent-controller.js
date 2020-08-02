@@ -2,13 +2,18 @@ const _ = require('lodash');
 
 
 const {Restaurent} = require('./../models/restaurent')
+const {User} = require('./../models/user')
+
 
 
 
 exports.addrestaurent=async(req,res)=>{
 
 try {
-  var body=_.pick(req.body,['name','address','ratings']);
+	var user=await User.findUserByToken(req.headers['x-auth']);
+	req.body.userId=user._id;
+	console.log(req.body);
+  var body=_.pick(req.body,['name','address','ratings','userId']);
   var restaurent= new Restaurent(body);
   await restaurent.save();
   res.send(body);

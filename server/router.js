@@ -13,6 +13,9 @@ const router=express.Router();
 
 router.get('/',userController.home);
 
+
+
+
 // signup request
 router.post('/signup',userController.signup);
 
@@ -27,12 +30,17 @@ router.delete('/users/me/logout',authenticate,userController.logout);
 //profile with token
 router.get('/users/me',authenticate,userController.loginWithToken);
 
-router.post('/addrestaurent',restaurentcontroller.addrestaurent);
+router.post('/addrestaurent',authenticate,restaurentcontroller.addrestaurent);
+
+
 
 router.get('/home',restaurentcontroller.home);
 
-router.post('/additem',itemcontroller.additem);
+router.post('/additem',authenticate,itemcontroller.additem);
 
-router.get('/homeItem',itemcontroller.homeItem);
+router.get('/homeItem/:id',itemcontroller.homeItem);
+
+
+
 
 module.exports=router;
